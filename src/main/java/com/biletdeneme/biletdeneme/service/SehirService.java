@@ -28,8 +28,7 @@ public class SehirService {
     }
 
     public Sehir update(Long sehirId) {
-
-        return sehirRepository.save(  sehirRepository.findById(sehirId).get());
+    return sehirRepository.save(  sehirRepository.findById(sehirId).get());
     }
 
     public Boolean delete(Long id) {

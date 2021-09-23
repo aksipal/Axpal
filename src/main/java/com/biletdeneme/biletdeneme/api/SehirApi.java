@@ -31,6 +31,7 @@ public class SehirApi {
     public ResponseEntity<Sehir> update(@PathVariable Long id){
         return ResponseEntity.ok(sehirService.update(id));
     }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id){
         return ResponseEntity.ok(sehirService.delete(id));
