@@ -1,6 +1,4 @@
 package com.biletdeneme.biletdeneme.api;
-
-
 import com.biletdeneme.biletdeneme.modal.Sehir;
 import com.biletdeneme.biletdeneme.service.SehirService;
 import org.springframework.beans.factory.annotation.Autowired;

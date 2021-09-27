@@ -1,8 +1,8 @@
 package com.biletdeneme.biletdeneme.api;
 
-import com.biletdeneme.biletdeneme.modal.Bilet;
+
 import com.biletdeneme.biletdeneme.modal.Rezervasyon;
-import com.biletdeneme.biletdeneme.service.BiletService;
+
 import com.biletdeneme.biletdeneme.service.RezervasyonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
