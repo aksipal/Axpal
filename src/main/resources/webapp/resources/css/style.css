@@ -1,0 +1,23 @@
+ 
+.header{
+	background-color: #d4002a;
+	color: white;
+	
+}
+
+.header .logo{
+	max-width: 150px;
+	
+}
+
+.header .admlogo{
+	max-width: 70px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.menu{
+	
+	min-width: 300px;
+	font-size: x-small
+}

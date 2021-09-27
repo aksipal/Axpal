@@ -1,4 +1,4 @@
-package com.biletdeneme.biletdeneme.app;
+package com.biletdeneme.biletdeneme.App;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

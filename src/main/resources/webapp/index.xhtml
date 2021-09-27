@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+</h:head>
+<h:body>
+    <ui:composition  template="/admin/ortakLayout.xhtml"     >
+
+        <ui:define name="icerik">
+            <h:panelGroup  id="ana_panel"  >
+                <h:panelGroup  id="panel_ic_element_1" rendered="#{anaSayfa.secilen_sayfa eq 'arac_satis'}"   >
+                    <ui:include src="/admin/pages/arac_satis.xhtml" ></ui:include>
+                </h:panelGroup>
+                <h:panelGroup  id="panel_ic_element_2" rendered="#{anaSayfa.secilen_sayfa eq 'arac_kaydet'}"   >
+                    <ui:include src="/admin/pages/arac_kaydet.xhtml" ></ui:include>
+                </h:panelGroup>
+                <h:panelGroup  id="panel_ic_element_3" rendered="#{anaSayfa.secilen_sayfa eq 'bos'}"   >
+                    <ui:include src="/admin/icerik.xhtml" ></ui:include>
+                </h:panelGroup>
+
+            </h:panelGroup>
+        </ui:define>
+
+    </ui:composition>
+</h:body>
+</html>

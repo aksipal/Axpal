@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    <h:outputStylesheet library="css" name="style.css"   />
+    <h:outputScript     library="js"  name="languages.js"  />
+
+</h:head>
+<h:body>
+    <f:view encoding="UTF-8"    >
+
+        <div class="container-fluid">
+            <div id="sayfa">
+                <div class="row">
+                    <div class="col-12">
+                        <ui:insert  name="header"  >
+                            <ui:include src="/admin/header.html" />
+                        </ui:insert>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <ui:insert  name="menu"  >
+                            <ui:include src="/admin/menu.html" />
+                        </ui:insert>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ui:insert  name="footer"  >
+                            <ui:include src="/admin/footer.html" />
+                        </ui:insert>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:view>
+</h:body>
+</html>
