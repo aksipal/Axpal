@@ -2,10 +2,13 @@ package com.biletdeneme.biletdeneme.modal;
 
 import com.sun.istack.NotNull;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name="kullanici")
@@ -30,6 +33,10 @@ public class Kullanici extends BaseEntity implements Serializable {
 
     @Column(name="kullanici_telefon")
     private int kullaniciTel;
+
+    @NotNull
+    @Column(name="kullanici_mail")
+    private String kullaniciMail;
 
     @Column(name="kullanici_adres")
     private String kullaniciAdres;

@@ -1,4 +1,6 @@
- 
+ <h:outputStylesheet name="%YOUR_PATH%/primeflex.min.css" />
+
+
 .header{
 	background-color: #d4002a;
 	color: white;

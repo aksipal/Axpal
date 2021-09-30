@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</h:head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<h:body>
+    <ui:composition>
+		<h:form  id="arac_kayit_guncelle"   >
+			<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+	        	<p:commandButton value="Evet" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
+	        	<p:commandButton value="Hayır" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times" />
+	    	</p:confirmDialog>   
+			<p:panelGrid  id="arac_kayit_guncelle_grid" columns="3" >
+				<p:outputLabel value="Model:" for="form_model" />
+				<p:inputText id="form_model" value="#{aracKaydetGuncelle.aracDao.arac.MODEL}" required="true" requiredMessage="Lütfen model bilgisini giriniz!"  />
+				<p:message for="form_model" showDetail="true"  />
+			 	
+			 	<p:outputLabel value="Ek Bilgi:" for="form_ekBilgi" />
+			 	<p:inputText id="form_ekBilgi" value="#{aracKaydetGuncelle.aracDao.arac.EK_BILGI}" required="false"  />
+			 	<p:message for="form_ekBilgi" showDetail="true"  />
+			 	
+			 	<p:outputLabel value="Marka:" for="form_marka" />
+			 	<p:selectOneMenu  id="form_marka" value="#{aracKaydetGuncelle.aracDao.arac.MARKA}" required="true" requiredMessage="Lütfen marka bilgisini seçin"  >
+			 		<f:selectItem itemLabel="Seçiniz..." itemValue="" />
+			 		<f:selectItem itemLabel="Bmw" itemValue="BMW" />
+			 		<f:selectItem itemLabel="Mercedes (2000-Sonrası)" itemValue="MERCEDES" />
+			 		<f:selectItem itemLabel="Volvo" itemValue="VOLVO" />			 				 	
+			 	</p:selectOneMenu>
+			 	<p:message   for="form_marka"  showDetail="true" />
+			 	
+			 	<p:outputLabel value="Renk:" for="form_renk" />
+			 	<p:selectOneMenu  value="#{aracKaydetGuncelle.aracDao.arac.RENK}"   required="true" requiredMessage="Lütfen renk seçiniz!" id="form_renk" >
+			 		<f:selectItems  itemLabel="#{arac_rengi.renk}" itemValue="#{arac_rengi}" value="#{aracKaydetGuncelle.renkleriAl()}" var="arac_rengi" />
+			 					 	
+			 	</p:selectOneMenu>
+			 	<p:message   for="form_renk"  showDetail="true" />
+			 	
+			 	<p:outputLabel value="Üretim Tarihi" for="form_uretim_tarihi" />
+			 	<p:datePicker value="#{aracKaydetGuncelle.aracDao.arac.URETIM_YILI}"  locale="tr" id="form_uretim_tarihi" required="true" requiredMessage="Lütfen üretim tarihini giriniz!" />
+			  	<p:message   for="form_uretim_tarihi"  showDetail="true" />
+			 
+			</p:panelGrid>	
+			
+			<p:panelGrid  id="arac_kayit_guncelle_grid_btns" columns="3"  >
+				<p:spacer/>
+				<p:commandButton  value="Yeni" id="form_yeni_buton" action="#{aracKaydetGuncelle.yeniArac()}"  update="arac_kayit_guncelle" immediate="true" >
+					<p:resetInput target="arac_kayit_guncelle"  />				
+				</p:commandButton>
+				<p:commandButton  value="Kaydet" id="form_kaydet_buton" action="#{aracKaydetGuncelle.aracKaydet()}" update="arac_kayit_guncelle" >
+					<p:confirm   header="Dikkat"  message="Kaydetmek istediğinizden emin misiniz?" icon="fa fa-exclamation"  />
+				</p:commandButton>
+			</p:panelGrid>
+						
+		</h:form>
+	 </ui:composition>
+
+
+</h:body>
+</html>

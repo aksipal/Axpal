@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</h:head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<h:body>
+    <div className="row">
+    <div class="bg-image" style="
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.webp');
+    height: 100vh;"> 
+    <div class="row col-lg-12 mx-auto">
+    <div class="col-3 mx-auto px-md-5 ">
+        <input type="text" class="form-control" name="kullaniciName" placeholder="AHMET">
+        <label for="floatingInput">Ad</label>
+    </div>
+</div>
+    <div class="row col-lg-12 mx-auto ">
+    <div class="col-3 mx-auto px-md-5 my-2">
+        <input type="email" class="form-control" name="kullaniciSurname" placeholder="IŞIK">
+        <label for="floatingInput">Soyad</label>
+    </div>
+</div>
+<div class="row col-lg-12 mx-auto ">
+    <div class="col-3 mx-auto px-md-5 my-2">
+        <input type="email" class="form-control" name="kullaniciMail" placeholder="ahmet@gmail.com">
+        <label for="floatingInput">e-mail</label>
+    </div>
+</div>
+<div class="row col-lg-12 mx-auto ">
+    <div class="col-3 mx-auto px-md-5 my-2">
+        <input type="email" class="text" name="kullaniciLoginName" placeholder="ahmet06">
+        <label for="floatingInput">Kullanıcı Adı</label>
+    </div>
+</div>
+<div class="row col-lg-12 mx-auto ">
+    <div class="col-3 mx-auto px-md-5 my-2">
+        <input type="email" class="form-control" name="kullaniciLoginPasword" placeholder="123456">
+        <label for="floatingInput">Kullanıcı Şifre</label>
+    </div>
+</div>
+</div>
+</div
+<div class="row">
+    <p:outputLabel value="Ek Bilgi:" for="form_ekBilgi" />
+    <p:inputText id="form_ekBilgi" value="#{aracKaydetGuncelle.aracDao.arac.EK_BILGI}" required="false"  />
+    <p:message for="form_ekBilgi" showDetail="true"  />
+</div>
+</h:body>
+</html>
